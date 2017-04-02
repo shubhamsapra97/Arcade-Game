@@ -1,4 +1,5 @@
-# Front-End-Project-6
+﻿# Front-End-Project-6
+----------------------------------
 
     •This project is a dynamic application that demonstrates effective use of Object Oriented JavaScript.
 
