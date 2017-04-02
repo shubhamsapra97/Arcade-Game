@@ -5,12 +5,15 @@ var Enemy = function(x,y) {
     this.speed = this.enemyspeed();
     this.sprite = 'images/enemy-bug.png';
 };
-var highspeed = 300;
+var highspeed = 400;
 var lowspeed = 50;
-var total = 0;
+var bigLoc = 800;
+var smallLoc = 10;
+var total = 0, level=0;
+var a,b;
 
 Enemy.prototype.update = function(dt) {
-    if(this.x < 500){
+    if(this.x < 700){
       this.x = this.x + this.speed * dt ;
     }
     else{
@@ -33,24 +36,34 @@ var allEnemies = [
    new Enemy(0,230)
 ];
 
-var Player = function(x,y) {
+var Player = function(x,y){
     this.x = x;
     this.y = y;
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'images/char-horn-girl.png';
 };
 
-
-Player.prototype.resetPlayer = function () {
-    this.x = 200;
+Player.prototype.resetPlayer = function(){
+    this.x = 300;
     this.y = 400;
 };
 
-Player.prototype.update = function () {
-    for(var i=0, len=allEnemies.length; i < len; i++) {
+Player.prototype.update = function(dt){
+    for(var i=0; i<allEnemies.length; i++) {
         if (this.x < allEnemies[i].x + 73 && this.x + 73 > allEnemies[i].x && this.y < allEnemies[i].y + 73 && this.y + 73 > allEnemies[i].y) {
-            this.resetPlayer();
+            player.resetPlayer();
+            if(level>0){
+              level = level - 1;
+              allEnemies.pop();
+              $("#level").text(level);
+            }
             break;
         }
+    }
+
+    if (this.x < chabi.x + 60 && this.x + 60 > chabi.x && this.y < chabi.y + 60 && this.y + 60 > chabi.y) {
+        chabi.update();
+        total = total + 100;
+        $('#total').text(total);
     }
 
 };
@@ -59,24 +72,67 @@ Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+var key = function(x,y){
+  this.x = x;
+  this.y = y;
+  this.sprite = 'images/Key.png';
+}
+
+key.prototype.render = function() {
+    ctx.drawImage(Resources.get('images/Key.png'),this.x,this.y);
+};
+
+// key.prototype.location = function() {
+//   return Math.floor(Math.random()*(highspeed - lowspeed + 1) + lowspeed);
+// };
+
+// setInterval(function(){
+//   var a = Math.floor((Math.random() * 5) + 0) * 101;
+//   var b = (Math.floor((Math.random() * 3) + 1) * 83)-20;
+//   chabi.update();
+// }, 1000);
+
+key.prototype.update = function(dt) {
+    var that=this;
+
+      a = Math.floor((Math.random() * 7) + 0) * 101;
+      b = (Math.floor((Math.random() * 3) + 1) * 83)-20;
+
+      if( a<800 && a>=0 && b<250 && b>50){
+          that.x = a;
+          that.y = b;
+      }
+};
+
+var chabi = new key(300,240);
+
 Player.prototype.handleInput = function(key){
   if(key == 'left'){
      if(this.x>0){
        this.x = this.x - 100;
-  }
+     }
 }
   else if(key == 'up'){
+    for(var i=0;i<rocky.length;i++){
+      if(this.y == rocky.y){
+        this.y = this.y;
+        break;
+      }
+    }
     if(this.y>72){
        this.y = this.y - 82;
-  }
+    }
   else{
     total = total + 1;
     $('#total').text(total);
-    this.resetPlayer();
+    level = level + 1;
+    $("#level").text(level);
+    allEnemies.push(new Enemy(a-500,b));
+    player.resetPlayer();
   }
 }
  else if(key == 'right'){
-  if(this.x<400){
+  if(this.x<600){
       this.x = this.x + 100;
  }
 }
@@ -86,7 +142,7 @@ Player.prototype.handleInput = function(key){
   }
 }
 };
-var player = new Player(200,400);
+var player = new Player(300,400);
 
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
@@ -98,3 +154,18 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+var rock = function(x,y){
+  this.x = x;
+  this.y = y;
+  this.sprite = 'images/Rock.png';
+}
+
+rock.prototype.render = function() {
+    ctx.drawImage(Resources.get('images/Rock.png'),this.x,this.y);
+};
+
+var rocky =[
+  new rock(100,145),
+  new rock(500,230)
+];
