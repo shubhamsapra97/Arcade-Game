@@ -154,9 +154,9 @@ var Engine = (function(global) {
 
         player.render();
         chabi.render();
-        rocky.forEach(function(rock) {
-            rock.render();
-        });
+        // rocky.forEach(function(rock) {
+        //     rock.render();
+        // });
     }
 
     /* This function does nothing but it could have been a good place to

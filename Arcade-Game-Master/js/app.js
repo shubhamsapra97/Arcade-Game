@@ -154,18 +154,18 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
-var rock = function(x,y){
-  this.x = x;
-  this.y = y;
-  this.sprite = 'images/Rock.png';
-}
-
-rock.prototype.render = function() {
-    ctx.drawImage(Resources.get('images/Rock.png'),this.x,this.y);
-};
-
-var rocky =[
-  new rock(100,145),
-  new rock(500,230)
-];
+// 
+// var rock = function(x,y){
+//   this.x = x;
+//   this.y = y;
+//   this.sprite = 'images/Rock.png';
+// }
+//
+// rock.prototype.render = function() {
+//     ctx.drawImage(Resources.get('images/Rock.png'),this.x,this.y);
+// };
+//
+// var rocky =[
+//   new rock(100,145),
+//   new rock(500,230)
+// ];
