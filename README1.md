@@ -17,5 +17,3 @@
         •Still adding more functional   
         
     •ENJOY!!
-    
- [DEMO](https://blog-5946b.firebaseapp.com)
