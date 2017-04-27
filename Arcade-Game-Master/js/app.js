@@ -48,6 +48,7 @@ Player.prototype.resetPlayer = function(){
 };
 
 Player.prototype.update = function(dt){
+    var that = this;
     for(var i=0; i<allEnemies.length; i++) {
         if (this.x < allEnemies[i].x + 73 && this.x + 73 > allEnemies[i].x && this.y < allEnemies[i].y + 73 && this.y + 73 > allEnemies[i].y) {
             player.resetPlayer();
@@ -66,6 +67,11 @@ Player.prototype.update = function(dt){
         $('#total').text(total);
     }
 
+    // for(var y=0;y<rocky.length;y++){
+    //   if (rocky[y].x < player.x + player.width && rocky[y].x + rocky[y].width > player.x && rocky[y].y < player.y + player.height && rocky[y].height + rocky[y].y > player.y) {
+    //       player.halt();
+    //   }
+    // }
 };
 
 Player.prototype.render = function() {
@@ -106,6 +112,23 @@ key.prototype.update = function(dt) {
 
 var chabi = new key(300,240);
 
+// var rock = function(x,y){
+//   this.x = x;
+//   this.y = y;
+//   this.width = 80;
+//   this.height = 80;
+//   this.sprite = 'images/Rock.png';
+// }
+//
+// rock.prototype.render = function() {
+//     ctx.drawImage(Resources.get('images/Rock.png'),this.x,this.y);
+// };
+//
+// var rocky =[
+//   new rock(100,145),
+//   new rock(500,230)
+// ];
+
 Player.prototype.handleInput = function(key){
   if(key == 'left'){
      if(this.x>0){
@@ -113,12 +136,6 @@ Player.prototype.handleInput = function(key){
      }
 }
   else if(key == 'up'){
-    for(var i=0;i<rocky.length;i++){
-      if(this.y == rocky.y){
-        this.y = this.y;
-        break;
-      }
-    }
     if(this.y>72){
        this.y = this.y - 82;
     }
@@ -130,7 +147,7 @@ Player.prototype.handleInput = function(key){
     allEnemies.push(new Enemy(a-500,b));
     player.resetPlayer();
   }
-}
+ }
  else if(key == 'right'){
   if(this.x<600){
       this.x = this.x + 100;
@@ -154,18 +171,3 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-// 
-// var rock = function(x,y){
-//   this.x = x;
-//   this.y = y;
-//   this.sprite = 'images/Rock.png';
-// }
-//
-// rock.prototype.render = function() {
-//     ctx.drawImage(Resources.get('images/Rock.png'),this.x,this.y);
-// };
-//
-// var rocky =[
-//   new rock(100,145),
-//   new rock(500,230)
-// ];
