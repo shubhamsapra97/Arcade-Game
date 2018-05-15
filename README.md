@@ -26,4 +26,4 @@ This project is a dynamic application that demonstrates effective use of Object 
  5. Prevent in contact with trees. This made lead to loss in score.
 
 # Live Demo
-[Neighbourhood_Map](https://shubhamsapra97.github.io/Arcade_Game/)
+[Arcade_Game](https://shubhamsapra97.github.io/Arcade_Game/)
