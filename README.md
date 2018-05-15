@@ -1,4 +1,5 @@
-# Front-End-Project-6
+﻿# Front-End-Project-6
+----------------------------------
 
     •This project is a dynamic application that demonstrates effective use of Object Oriented JavaScript.
 
@@ -14,6 +15,6 @@
 
         •Aquire keys to increment your score by 100.
 
-        •Still adding more functional   
+        •Still adding more functional
         
     •ENJOY!!

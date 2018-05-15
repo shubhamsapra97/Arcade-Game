@@ -1,0 +1,71 @@
+body {
+    background-color: skyblue;
+}
+
+#container{
+  display: flex;
+  text-align: center;
+}
+
+/*
+#scoreCard{
+    width: 100vw;
+    height: 10vw;
+    background-color: white;
+    margin-left: 85vw; 
+    position: absolute;
+    z-index: 2;
+    opacity: .8;
+}
+*/
+
+.instructionBtn{
+    margin-left: 55px;
+    margin-top: 0.7vw;
+}
+
+#heart , #gem{
+  width: 80px;
+  height: 80px;
+/*  padding-top: 20px;*/
+}
+
+table{
+  text-align: center;
+}
+
+#canvas{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5vw;
+}
+
+/*
+#level{
+  margin-left: 5px;
+}
+*/
+
+.shift{
+    margin-left: 3vw;
+}
+
+#lives,#total,#restart,#Gem,#level{
+  margin-left: 70px;
+}
+
+/*
+#hearty{
+  width: 80px;
+  height: 80px;
+}
+*/
+
+#written{
+  margin-top: 30px;
+}
+
+td{
+  width: 300px;
+}

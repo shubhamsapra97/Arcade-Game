@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Effective JavaScript: Frogger</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">inStRuCtIoNs</h4>
+        </div>
+        <div class="modal-body">
+            <table>
+              <tr>
+                <td><img id="picsy" src="images/Heart.png"></td>
+                <td>Lives (Total 6 , 100 Points)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/Gem Green.png"></td>
+                <td>Green Gem (Avatar Change)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/Gem Blue.png"></td>
+                <td>Blue Gem (Avatar Change)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/Star.png"></td>
+                <td>Star (50 Points)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/tree-ugly.png"></td>
+                <td>Ugly Tree (decreases score = 1 X time spent in bush)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/tree-short.png"></td>
+                <td>Short Tree (decreases score = 2 X time spent in bush)</td>
+              </tr>
+              <tr>
+                <td><img id="picsy" src="images/tree-tall.png"></td>
+                <td>Tall Tree (decreases score = 3 X time spent in bush)</td>
+              </tr>
+            </table>
+            <div id="written">
+                <ol start="1">
+                  <li>Try to reach Water area for next level</li>
+                  <li>Every New Level leads to increase in Enemy Traffic</li>
+                  <li>Prevent rushing in trees/bushes</li>
+                  <li>Collect Valuable Items for extra points</li>
+                  <li>Press "RESTART" to restart the game</li>
+                </ol>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div id="container">
+<!--      <div id="scoreCard">-->
+          <div class="shift"><button type="button" class="btn btn-primary btn-lg instructionBtn" data-toggle="modal" data-target="#myModal">Instructions</button></div>
+          <div class="shift"><h3 id="level">Level: 0</h3></div>
+          <div class="shift"><h3 id="lives">Lives: 6</h3></div>
+          <div class="shift"><h3 id="Gem">Gems: 0</h3></div>
+          <div class="shift"><h3 id="total">Total: 0</h3></div>
+          <div class="shift"><h3 id="restart">Restart</h3></div>
+<!--      </div>-->
+    </div>
+    <script src="js/resources.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/engine.js"></script>
+
+</body>
+</html>

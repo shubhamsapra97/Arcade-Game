@@ -25,8 +25,9 @@ var Engine = (function(global) {
         ctx = canvas.getContext('2d'),
         lastTime;
 
-    canvas.width = 707;
+    canvas.width = 1212;
     canvas.height = 606;
+    canvas.id = "canvas";
     doc.body.appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
@@ -113,11 +114,11 @@ var Engine = (function(global) {
                 'images/stone-block.png',   // Row 1 of 3 of stone
                 'images/stone-block.png',   // Row 2 of 3 of stone
                 'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/stone-block.png',   // Row 3 of 3 of stone
+                'images/grass-block.png',   // Row 3 of 3 of stone
             ],
             numRows = 6,
-            numCols = 7,
+            numCols = 12,
             row, col;
 
         /* Loop through the number of rows and columns we've defined above
@@ -153,7 +154,13 @@ var Engine = (function(global) {
         });
 
         player.render();
-        chabi.render();
+        heart.render();
+        star.render();
+        treeShort.render();
+        treeTall.render();
+        treeUgly.render();
+      //  rocky.render();
+        gem.render();
         // rocky.forEach(function(rock) {
         //     rock.render();
         // });
@@ -177,8 +184,21 @@ var Engine = (function(global) {
         'images/grass-block.png',
         'images/enemy-bug.png',
         'images/char-horn-girl.png',
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png',
+        'images/Mike.png',
+        'images/uda.png',
         'images/Key.png',
-        'images/Rock.png'
+        'images/Star.png',
+        'images/heart.png',
+        'images/tree-short.png',
+        'images/tree-tall.png',
+        'images/tree-ugly.png',
+        'images/Rock.png',
+        'images/Gem Green.png',
+        'images/Gem Blue.png'
     ]);
     Resources.onReady(init);
 
