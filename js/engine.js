@@ -192,7 +192,7 @@ var Engine = (function(global) {
         'images/uda.png',
         'images/Key.png',
         'images/Star.png',
-        'images/heart.png',
+        'images/Heart.png',
         'images/tree-short.png',
         'images/tree-tall.png',
         'images/tree-ugly.png',

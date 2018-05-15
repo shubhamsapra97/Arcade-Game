@@ -145,11 +145,11 @@ Player.prototype.update = function(dt){
 var heart = function(x,y){
   this.x = x;
   this.y = y;
-  this.sprite = 'images/heart.png';
+  this.sprite = 'images/Heart.png';
 }
 
 heart.prototype.render = function() {
-    ctx.drawImage(Resources.get('images/heart.png'),this.x,this.y);
+    ctx.drawImage(Resources.get('images/Heart.png'),this.x,this.y);
 };
 
 // key.prototype.location = function() {
